@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Letter Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css" >
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div class="columns" style="margin-top:5%">
+        <div class="column is-2 is-hidden-touch"></div>
+        <div class="column is-4">
+             <p class="title is-5">Letter Generator Options</p>
+             <p class="label has-text-weight-normal">How many letters to generate?</p>
+
+             <div class="field has-addons">
+                <p class="control">
+                    <input class="input is-large" type="number" id="letterCount" placeholder="Number of Letters" value="5" onchange="generateRandomLetters()">
+                </p>
+                <p class="control">
+                   <a class="button is-large is-static">Number of letters</a>
+                </p>
+             </div>
+             <p class="label has-text-weight-normal">Length of each random letter</p>
+             <div class="field has-addons">
+                <p class="control">
+                    <input class="input is-large" type="number" id="letterlength" placeholder="Length of letters" value="10" onchange="generateRandomLetters()">
+                </p>
+                <p class="control">
+                   <a class="button is-large is-static">Number of characters</a>
+                </p>
+             </div>
+             <p class="label has-text-weight-normal">Letters to choose from</p>
+             <div class="field">
+                <textarea class="textarea is-large" id="intext" rows="1" maxlength="50" oninput="generateRandomLetters()" >abcdefghijklmopqrstuvwxyz</textarea>
+             </div>
+             <button class="button is-large is-primary mt-4" onclick="generateRandomLetters()" autofocus>
+                <span class="material-symbols-outlined">
+                    engineering
+                    </span>
+             <span>Generate letters</span>
+                </button>
+                <button class="button is-large mt-4" onclick="copytext()">
+                    <span class="material-symbols-outlined">
+                        content_copy
+                        </span>
+                    </button>
+                    <button id="download" class="button is-large mt-4" onclick="downloadFile()">
+                        <span class="material-symbols-outlined">
+                            download
+                            </span>
+                        </button>
+        </div>
+        <div class="column is-4 has-text-centred" >
+            <textarea class="textarea is-primary is-large" id="outtext" rows="12" placeholder="Generated Letters"></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
